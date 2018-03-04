@@ -11,11 +11,10 @@ export default class Main extends Component {
     try {
       const device = await navigator.bluetooth.requestDevice({
         acceptAllDevices: true,
-        optionalService: ['battery_service']
+        optionalServices: ['battery_service']
       })
-      console.log('device', device)
       const server = await device.gatt.connect()
-      console.log('server', server)
+      const service = await server.getPrimaryService('battery_service')
     } catch (err) {
       console.log('error connecting to ble device', err)
     }
