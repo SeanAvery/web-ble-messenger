@@ -14,7 +14,14 @@ export default class Main extends Component {
         optionalServices: ['battery_service']
       })
       const server = await device.gatt.connect()
+      console.log('server', server)
       const service = await server.getPrimaryService('battery_service')
+      console.log('service', service)
+      const characteristic = await service.getCharacteristic('battery_level')
+      console.log('characteristic', characteristic)
+      const rawBatteryLevel = await characteristic.readValue()
+      const batteryLevel = rawBatteryLevel.getUint8(0)
+      console.log('batteryLevel', batteryLevel)
     } catch (err) {
       console.log('error connecting to ble device', err)
     }
