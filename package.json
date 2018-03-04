@@ -1,0 +1,39 @@
+{
+  "name": "web-ble-messenger",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "wds": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeanAvery/web-ble-messenger.git"
+  },
+  "keywords": [
+    "ble",
+    "blutooth",
+    "web",
+    "js"
+  ],
+  "author": "Sean Pollock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeanAvery/web-ble-messenger/issues"
+  },
+  "homepage": "https://github.com/SeanAvery/web-ble-messenger#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
