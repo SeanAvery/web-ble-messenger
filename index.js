@@ -8,12 +8,17 @@ export default class Main extends Component {
   }
 
   async handleBLEConnect() {
-    console.log('hit meh')
-    const devices = await navigator.bluetooth.requestDevice({
-      acceptAllDevices: true,
-      optionalService: ['battery_service']
-    })
-    console.log('devices', devices)
+    try {
+      const device = await navigator.bluetooth.requestDevice({
+        acceptAllDevices: true,
+        optionalService: ['battery_service']
+      })
+      console.log('device', device)
+      const server = await device.gatt.connect()
+      console.log('server', server)
+    } catch (err) {
+      console.log('error connecting to ble device', err)
+    }
   }
 
   render() {
